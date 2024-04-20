@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1713563027282,
+      "tag": "0000_massive_the_fallen",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1713567413286,
+      "tag": "0001_bumpy_anthem",
+      "breakpoints": true
+    }
+  ]
+}

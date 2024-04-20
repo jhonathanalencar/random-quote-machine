@@ -1,0 +1,148 @@
+{
+  "id": "783036c6-8dbb-4977-9566-b116da1510fe",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "5",
+  "dialect": "pg",
+  "tables": {
+    "author": {
+      "name": "author",
+      "schema": "lak",
+      "columns": {
+        "author_id": {
+          "name": "author_id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "author": {
+          "name": "author",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "author_author_key": {
+          "name": "author_author_key",
+          "nullsNotDistinct": false,
+          "columns": [
+            "author"
+          ]
+        }
+      }
+    },
+    "category": {
+      "name": "category",
+      "schema": "lak",
+      "columns": {
+        "category_id": {
+          "name": "category_id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "category": {
+          "name": "category",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "category_category_key": {
+          "name": "category_category_key",
+          "nullsNotDistinct": false,
+          "columns": [
+            "category"
+          ]
+        }
+      }
+    },
+    "quote": {
+      "name": "quote",
+      "schema": "lak",
+      "columns": {
+        "quote_id": {
+          "name": "quote_id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "quote": {
+          "name": "quote",
+          "type": "varchar(255)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "author_id": {
+          "name": "author_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "category_id": {
+          "name": "category_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "quote_author_id_author_author_id_fk": {
+          "name": "quote_author_id_author_author_id_fk",
+          "tableFrom": "quote",
+          "tableTo": "author",
+          "schemaTo": "lak",
+          "columnsFrom": [
+            "author_id"
+          ],
+          "columnsTo": [
+            "author_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "quote_category_id_category_category_id_fk": {
+          "name": "quote_category_id_category_category_id_fk",
+          "tableFrom": "quote",
+          "tableTo": "category",
+          "schemaTo": "lak",
+          "columnsFrom": [
+            "category_id"
+          ],
+          "columnsTo": [
+            "category_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "quote_quote_key": {
+          "name": "quote_quote_key",
+          "nullsNotDistinct": false,
+          "columns": [
+            "quote"
+          ]
+        }
+      }
+    }
+  },
+  "enums": {},
+  "schemas": {
+    "lak": "lak"
+  },
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

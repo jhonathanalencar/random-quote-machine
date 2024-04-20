@@ -1,0 +1,10 @@
+
+# @name getAllQuotes
+
+GET http://localhost:3000/api/quotes
+
+###
+
+# @name getRandomQuote
+
+GET http://localhost:3000/api/quotes/random
